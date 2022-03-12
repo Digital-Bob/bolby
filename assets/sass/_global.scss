@@ -1,0 +1,46 @@
+body {
+	background-color: $body-bg-color;
+	font-family: $main-font-family;
+	overflow-x: hidden;
+}
+@media (max-width: $show-responsive-nav) {
+	.menu-open {
+		main {
+			margin: 0 0 0 290px;
+		}
+	}
+}
+main {
+	padding: 0 0 0 290px;
+	@media (max-width: $show-responsive-nav) {
+		padding: 0;
+	}
+}
+a {
+	text-decoration: none;
+	transition: 300ms;
+}
+.container {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+.globalHeader {
+	@include fluid-type-container(26px, 36px);
+	color: $main-header-color;
+	margin: 0 0 60px 0;
+	position: relative;
+	@include for-tablet {
+		margin-bottom: 40px;
+	}
+	&::after {
+		content: '';
+		height: 37px;
+		width: 37px;
+		display: block;
+		background-image: url(/assets/img/dots-bg.svg);
+		position: absolute;
+		top: -12px;
+		left: -12px;
+	}
+}

@@ -1,0 +1,92 @@
+.about {
+	padding: 80px 0;
+	@include for-tablet {
+		padding: 40px 0;
+	}
+	.aboutBox {
+		display: flex;
+		margin: 0 -15px;
+		flex-wrap: wrap;
+		.photo {
+			width: 25%;
+			padding: 0 15px;
+			@include for-tablet {
+				width: 100%;
+			}
+		}
+		.cloud {
+			width: 75%;
+			padding: 0 15px;
+      
+			@include for-tablet {
+				width: 100%;
+        text-align: center;
+        padding-bottom: 40px;
+			}
+			.bg {
+				padding: 30px 15px;
+				background-color: $about-cloud-bg;
+				box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
+				border-radius: 20px;
+				display: flex;
+				position: relative;
+				&::before {
+					content: '';
+					width: 10px;
+					height: 10px;
+					border-style: solid;
+					border-width: 15px 15px 15px 0;
+					border-color: transparent #fff transparent transparent;
+					position: absolute;
+					top: 20%;
+					left: -15px;
+				}
+				.desc {
+					padding: 0 15px;
+					width: 50%;
+					p {
+						margin: 0;
+						line-height: 1.7;
+						text-align: justify;
+					}
+				}
+				.skills {
+					padding: 0 15px;
+					width: 50%;
+					.skillName {
+						display: flex;
+						justify-content: space-between;
+						margin-bottom: 20px;
+						.name {
+							font-weight: 500;
+						}
+						.percent {
+							font-size: 14px;
+						}
+					}
+					.progress {
+						height: 7px;
+						border-radius: 15px;
+						background-color: $progress-bg-color;
+						margin-bottom: 15px;
+						.bar {
+							display: block;
+							height: 7px;
+							border-radius: 15px;
+
+							&.yellow {
+								background-color: $progress-bar-yellow;
+							}
+							&.red {
+								background-color: $progress-bar-red;
+							}
+							&.blue {
+								background-color: $progress-bar-blue;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
